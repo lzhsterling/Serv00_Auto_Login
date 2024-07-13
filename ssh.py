@@ -18,7 +18,7 @@ def ssh_connect(host, username, password, bark):
 	
 	# Exécuter la commande pm2 resurrect
         ssh = transport.open_channel(kind='session')
-        ssh.exec_command('./home/username/.npm-global/bin/pm2 resurrect')
+        ssh.exec_command('~/.npm-global/bin/pm2 resurrect')
         stdout = ssh.makefile('rb', -1)
         stderr = ssh.makefile_stderr('rb', -1)
         output = stdout.read().decode().strip()
