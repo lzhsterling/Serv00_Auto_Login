@@ -29,7 +29,7 @@ def ssh_connect(host, username, password, bark):
             print(f"PM2保活成功，已重启.")
 
         if bark:
-            url = f"https://api.day.app/{bark}/Serv00自动登录/账号 {username} SSH连接成功。"
+            url = f"https://api.day.app/{bark}/Serv00自动登录/账号 {username} SSH连接成功。?icon=https://testingcf.jsdelivr.net/gh/lzh-zone/pic@main/img/logo.png"
             response = requests.get(url)
     except Exception as e:
         ssh_status = f"SSH连接失败，错误信息: {e}"
@@ -37,7 +37,7 @@ def ssh_connect(host, username, password, bark):
        
         
         if bark:
-            url = f"https://api.day.app/{bark}/Serv00自动登录/账号 {username} SSH连接失败，请检查账号和密码是否正确。"
+            url = f"https://api.day.app/{bark}/Serv00自动登录/账号 {username} SSH连接失败，请检查账号和密码是否正确。?icon=https://testingcf.jsdelivr.net/gh/lzh-zone/pic@main/img/logo.png"
             response = requests.get(url)
     finally:
         if transport is not None:
